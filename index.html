@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/9417a7370e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Montserrat:wght@400;700&family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather project</title>
+  </head>
+
+  <body>
+      <br/>
+      <br/>
+      <br/>
+    <div class="container">
+        <div class="all-info">
+            <div class="select-city">
+      <form class="search-form" id="search-form" >
+        <div class="row">
+          <div class="col-7">
+        <input class="inputCity"type="search" placeholder="Enter the City" size="42" id="search-text-input"/>
+          </div>
+          <div class="col">
+        <input class="inputSearchCity"type="submit" value="Search" />
+          </div>
+          <div class="col">
+            <button  id="current-location-button">Current</button>
+          </div>
+        </div>
+    </form>
+      </div>
+   
+          <div class="row">
+              <div class="col-4" >,
+                    <div class="current-city">
+        <h1 id="city">
+          <strong>Kyiv</strong>
+        </h1>
+        <h2> <span id="date"></span></h2>
+       
+      </div>
+      </div>
+
+        <div class="col-4">
+      <div class="temp">
+        <span class ="temperature" id="temperature"></span><span class="units">°C</span>
+        
+        <i class="fa fa-light fa-sun icon-sun"></i>
+      </div>
+        </div>
+
+          <div class="col-4">
+      <ul >
+        <li class="weather">Sunny</li>
+        <li class="weather">Don`t forget about your sunscreen😊</li>
+      </br>
+        <li >Sunrise
+            <span id="sunrise" class="numbers">04:50</span> </li>
+        <li>Sunset 
+             <span class="numbers">21:12</span></li>
+        <li id="description"></li> 
+        <li>Wind
+             <span id="wind" class="numbers"></span>km/h</li>
+        <li >Humidity 
+            <span id="humidity" class="numbers"></span>%</li>
+      </ul>
+          </div>
+      </div>
+    </div>
+
+<div class="row">
+  <div class="col">
+    <div class="card" style="width: 150px;">
+  <div class="card-body">
+    <h4 class="card-title">SUNDAY 03/07</h4>
+    <i class=" fa fa-light fa-cloud-sun pic"></i>
+  <hr/>
+    <h5 class="card-text">+32    +17</h5>
+  </div>
+  </div>
+  </div>
+
+  <div class="col">
+    <div class="card" style="width: 150px;">
+  <div class="card-body">
+    <h4 class="card-title">MONDAY 04/07</h4>
+    <i class="fa fa-light fa-sun pic"></i>
+      <hr/>
+    <h5 class="card-text">+32   +19 </h5>
+      </div>
+</div>
+  </div>
+
+   <div class="col">
+    <div class="card" style="width: 150px;">
+  <div class="card-body">
+    <h4 class="card-title">TUESDAY 05/07</h4>
+    <i class="fa fa-light fa-cloud-sun pic"></i>
+      <hr/>
+       <h5 class="card-text"> +33   +21 </h5>
+      </div>
+</div>
+  </div>
+
+   <div class="col">
+    <div class="card" style="width: 150px;">
+  <div class="card-body">
+    <h4 class="card-title">WEDNESDAY 06/07</h4>
+    <i class="fa fa-light fa-cloud-bolt pic"></i>
+      <hr/>
+    <h5 class="card-text">+33  +18 </h5>
+      </div>
+</div>
+  </div>
+
+   <div class="col">
+    <div class="card" style="width: 150px;">
+  <div class="card-body">
+    <h4 class="card-title">THURSDAY 07/07</h4>
+    <i class="fa fa-light fa-cloud-showers-heavy pic"></i>
+      <hr/>
+    <h5 class="card-text">+24  +17 </h5>
+      </div>
+</div>
+  </div>
+
+    </div>
+    </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
