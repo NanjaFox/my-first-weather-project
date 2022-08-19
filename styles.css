@@ -82,6 +82,9 @@ p {
 li {
   list-style: none;
 }
+li:first-letter {
+  text-transform: capitalize;
+}
 .weather {
   text-align: center;
   font-size: 24px;
