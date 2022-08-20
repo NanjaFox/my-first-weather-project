@@ -30,11 +30,7 @@ function search(event) {
 
   let h1 = document.querySelector("#city");
   h1.innerHTML = `${searchInput.value}`;
-  let iconElement = document.querySelector("#icon");
-   iconElement.setAttribute(
-     "src",
-     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-   );
+ 
 }
 
 let form = document.querySelector("#search-form");
@@ -56,6 +52,11 @@ function showWeatherConditions(response) {
     response.data.weather[0].description;
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+ let iconElement = document.querySelector("#icon");
+ iconElement.setAttribute(
+   "src",
+   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+ );
 }
 function searchCity(city) {
   let apiKey = "1c991bce049a710ef826d3ff85d97e35";
