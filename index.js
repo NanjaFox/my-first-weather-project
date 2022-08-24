@@ -33,6 +33,30 @@ function search(event) {
  
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+ <div class="col-2">
+        <div class="card" style="width: 150px;"> ${day} </div>
+        <div class="card-body">
+        <h4 class="card-title"></h4>
+        <i class=" fa fa-light fa-cloud-sun pic"></i>
+        <hr/>
+        <h5 class="card-text"> +32°  +17°</h5>
+        </div>
+        </div>
+        </div>
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
@@ -85,3 +109,4 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 searchCity("Kyiv");
+displayForecast();
