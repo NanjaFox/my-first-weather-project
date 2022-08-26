@@ -35,16 +35,16 @@ function search(event) {
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row row-cols-5">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
- <div class="col-2">
-        <div class="card" style="width: 150px;"> ${day} </div>
+ <div class="col">
+        <div class="card" style="width: 150px;">  
         <div class="card-body">
-        <h4 class="card-title"></h4>
+        <h4 class="card-title">${day}</h4>
         <i class=" fa fa-light fa-cloud-sun pic"></i>
         <hr/>
         <h5 class="card-text"> +32°  +17°</h5>
