@@ -33,26 +33,41 @@ function search(event) {
  
 }
 
+function formatDay(timestamp) {
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row row-cols-5">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
     forecastHTML =
       forecastHTML +
       `
  <div class="col">
         <div class="card" style="width: 150px;">  
         <div class="card-body">
-        <h4 class="card-title">${day}</h4>
-        <i class=" fa fa-light fa-cloud-sun pic"></i>
+        <h4 class="card-title">${formatDay(forecastDay.dt)}</h4>
+        <img
+          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+          alt=""
+          width="42"
+        />
+        
         <hr/>
-        <h5 class="card-text"> +32°  +17°</h5>
+        <h5 class="card-text"> ${Math.round(forecastDay.temp.max)}°  ${Math.round(forecastDay.temp.min)}°</h5>
         </div>
         </div>
         </div>
         `;
+   console.log(forecastDay.temp.max);
+      }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -76,9 +91,7 @@ function showWeatherConditions(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#sunrise").innerHTML = Math.round(
-    response.data.sys.sunrise
-  );
+
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
